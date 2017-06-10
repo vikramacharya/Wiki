@@ -74,8 +74,9 @@ $ cd /etc/apache2/extra
 $ sudo nano httpd-ssl.conf
 ```
 Declare VirtualHost
-The first step is to declare a new virtual host using the <VirtualHost> directive.
-```<VirtualHost *:443>
+The first step is to declare a new virtual host using the ```<VirtualHost>``` directive.
+```
+<VirtualHost *:443>
 ```
 General Virtual Host Settings
 Next, within the <VirtualHost> directive, we will declare some basic host settings:

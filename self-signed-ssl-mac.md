@@ -56,10 +56,14 @@ $ sudo nano httpd.conf
 
 Find the following line and uncomment it. Just in case you are not sure, comments have a leading pound/hash symbol ( # ) – just remove it.
 
-```Include httpd-ssl.conf File
+```
+LoadModule ssl_module libexec/apache2/mod_ssl.so
 ```
 While we still have the httpd.conf file open, we also need to uncomment the line that includes the httpd-ssl.conf file.
-
+```
+# Secure (SSL/TLS) connections
+Include /private/etc/apache2/extra/httpd-ssl.conf
+```
 Add VirtualHost to httpd-ssl.conf
 The last step is to configure a new virtual host that is bound to port 443 (HTTPS). There is already a sample <VirtualHost> record in the httpd-ssl.conf file. I suggest you first remove it, or comment it all out, so that you can just paste in the necessary code at the bottom of the file.
 My httpd-ssl.conf file is located at: /etc/apache2/conf/httpd-ssl.conf
